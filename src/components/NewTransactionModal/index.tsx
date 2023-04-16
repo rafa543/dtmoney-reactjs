@@ -4,7 +4,6 @@ import incomeImg from '../../assets/income.svg'
 import outcomeImg from '../../assets/outcome.svg'
 import closeImg from '../../assets/close.svg'
 import { FormEvent, useState, useContext } from "react";
-import { api } from "../../services/api";
 import { TransactionsContext } from "../../TransactionContext";
 
 interface NewTransitionModalProps {
