@@ -5,12 +5,14 @@ export const GlobalStyle = createGlobalStyle`
     :root {
         --background: #f0f2f5;
         --red: #e52e4d;
+        --green: #33CC95;
+
         --blue: #5429CC;
 
         --blue-light: #6933FF;
 
-        --text-title: #969CB3;
-        --text-body: #F0F2F5;
+        --text-title: #363F5F;
+        --text-body: #969cb3;
 
         --shape: #FFFFFF;
     }
