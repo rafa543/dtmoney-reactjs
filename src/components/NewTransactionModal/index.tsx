@@ -1,8 +1,9 @@
-import { Container, TransactionTypeContainer } from "./styles";
+import { Container, RadioBox, TransactionTypeContainer } from "./styles";
 import Modal from 'react-modal'
 import incomeImg from '../../assets/income.svg'
 import outcomeImg from '../../assets/outcome.svg'
 import closeImg from '../../assets/close.svg'
+import { useState } from "react";
 
 interface NewTransitionModalProps {
     isOpen: boolean;
@@ -10,6 +11,8 @@ interface NewTransitionModalProps {
 }
 
 export function NewTransactionModal({ isOpen, onRequestClose }: NewTransitionModalProps) {
+    const [type, setType] = useState('deposit')
+
     return (
         <Modal
             isOpen={isOpen}
@@ -17,9 +20,9 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransitionMod
             overlayClassName="react-modal-overlay"
             className="react-modal-content"
         >
-            <button 
-                type="button" 
-                onClick={onRequestClose} 
+            <button
+                type="button"
+                onClick={onRequestClose}
                 className="react-modal-close"
             >
                 <img src={closeImg} alt="Fechar modal" />
@@ -38,19 +41,23 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransitionMod
                 />
 
                 <TransactionTypeContainer>
-                    <button
+                    <RadioBox
                         type="button"
+                        onClick={() => { setType('deposit') }}
+                        isActive={type === 'deposit'}
                     >
-                        <img src={incomeImg} alt="Entrada"/>
+                        <img src={incomeImg} alt="Entrada" />
                         <span>Entrada</span>
-                    </button>
+                    </RadioBox>
 
-                    <button
+                    <RadioBox
                         type="button"
+                        onClick={() => { setType('withdraw') }}
+                        isActive={type === 'withdraw'}
                     >
-                        <img src={outcomeImg} alt="Saida"/>
+                        <img src={outcomeImg} alt="Saida" />
                         <span>Saida</span>
-                    </button>
+                    </RadioBox>
                 </TransactionTypeContainer>
 
                 <input
