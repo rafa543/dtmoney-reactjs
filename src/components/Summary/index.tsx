@@ -6,14 +6,14 @@ import { TransactionsContext } from "../../TransactionContext";
 import { useContext } from "react";
 
 export function Summary() {
-    const transactions = useContext(TransactionsContext)
+    const { transactions } = useContext(TransactionsContext)
     console.log(transactions)
-    return(
+    return (
         <Container>
             <div>
                 <header>
                     <p>Entradas</p>
-                    <img src={incomeImg} alt="Entradas"/>
+                    <img src={incomeImg} alt="Entradas" />
                 </header>
 
                 <strong>R$ 1000,00</strong>
@@ -21,7 +21,7 @@ export function Summary() {
             <div>
                 <header>
                     <p>Saidas</p>
-                    <img src={outcomeImg} alt="Entradas"/>
+                    <img src={outcomeImg} alt="Entradas" />
                 </header>
 
                 <strong>- R$ 500,00</strong>
@@ -29,7 +29,7 @@ export function Summary() {
             <div className="highlight-background">
                 <header>
                     <p>Entradas</p>
-                    <img src={totalImg} alt="Entradas"/>
+                    <img src={totalImg} alt="Entradas" />
                 </header>
 
                 <strong>R$ 500,00</strong>
